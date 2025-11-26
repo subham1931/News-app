@@ -3,7 +3,7 @@
 export default async function handler(req, res) {
   const { page = 1, pageSize = 12, q = "", category = "" } = req.query;
 
-  const API_KEY = process.env.NEWS_API_KEY2;
+  const API_KEY = process.env.NEWS_API_KEY;
   const BASE_URL = process.env.NEWS_API_BASE || "https://newsapi.org";
 
   if (!API_KEY) {
