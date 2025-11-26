@@ -1,26 +1,71 @@
 @import "tailwindcss";
 
+/* ------------------------------------------------------------------
+   Theme Variables (controlled by ThemeContext, NOT OS)
+-------------------------------------------------------------------*/
 :root {
   --background: #ffffff;
   --foreground: #171717;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+.dark {
+  --background: #0a0a0a;
+  --foreground: #ededed;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
+/* Apply background + text from variables */
 body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
+}
+
+/* ------------------------------------------------------------------
+   Animations
+-------------------------------------------------------------------*/
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Header animations */
+header {
+  animation: fadeIn 0.6s ease-out;
+}
+header h1 {
+  animation: slideUp 0.8s ease-out;
+}
+header p {
+  animation: slideUp 0.8s ease-out 0.1s backwards;
+}
+
+/* ------------------------------------------------------------------
+   Smooth Transitions for Interactive Elements
+-------------------------------------------------------------------*/
+* {
+  transition:
+    background-color 0.25s ease,
+    border-color 0.25s ease,
+    color 0.25s ease,
+    transform 0.2s ease;
 }
