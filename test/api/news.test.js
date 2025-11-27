@@ -2,11 +2,9 @@ import handler from "@/pages/api/news";
 
 describe("News API", () => {
   test("API returns correct data", async () => {
-    // MOCK ENV
     process.env.NEWS_API_KEY = "TEST_KEY";
     process.env.NEWS_API_BASE = "https://example.com";
 
-    // MOCK fetch()
     global.fetch = jest.fn(() =>
       Promise.resolve({
         json: () =>

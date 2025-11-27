@@ -12,7 +12,6 @@ export default function Navbar({ searchValue, onSearchChange }) {
           : "bg-gray-900 border-gray-700"
         }`}
     >
-      {/* Top Row: Title + Theme Toggle */}
       <div className="flex justify-between items-center">
         <div>
           <h1
@@ -30,7 +29,6 @@ export default function Navbar({ searchValue, onSearchChange }) {
           </p>
         </div>
 
-        {/* Theme Toggle */}
         <button
           onClick={toggleTheme}
           aria-label="Toggle Theme"
@@ -41,7 +39,6 @@ export default function Navbar({ searchValue, onSearchChange }) {
             }`}
         >
           {theme === "light" ? (
-            // Moon Icon
             <svg
               xmlns="http://www.w3.org/2000/svg"
               className="h-6 w-6 text-indigo-500"
@@ -57,7 +54,6 @@ export default function Navbar({ searchValue, onSearchChange }) {
               />
             </svg>
           ) : (
-            // Sun Icon
             <svg
               xmlns="http://www.w3.org/2000/svg"
               className="h-6 w-6 text-yellow-300"
@@ -76,7 +72,6 @@ export default function Navbar({ searchValue, onSearchChange }) {
         </button>
       </div>
 
-      {/* SearchBar Row */}
       <div className="w-full">
         <SearchBar value={searchValue} onChange={onSearchChange} />
       </div>

@@ -1,8 +1,5 @@
 @import "tailwindcss";
 
-/* ------------------------------------------------------------------
-   Theme Variables (controlled by ThemeContext, NOT OS)
--------------------------------------------------------------------*/
 :root {
   --background: #ffffff;
   --foreground: #171717;
@@ -13,7 +10,7 @@
   --foreground: #ededed;
 }
 
-/* Apply background + text from variables */
+
 body {
   background: var(--background);
   color: var(--foreground);
@@ -23,9 +20,6 @@ body {
     color 0.3s ease;
 }
 
-/* ------------------------------------------------------------------
-   Animations
--------------------------------------------------------------------*/
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -48,7 +42,6 @@ body {
   }
 }
 
-/* Header animations */
 header {
   animation: fadeIn 0.6s ease-out;
 }
@@ -59,9 +52,6 @@ header p {
   animation: slideUp 0.8s ease-out 0.1s backwards;
 }
 
-/* ------------------------------------------------------------------
-   Smooth Transitions for Interactive Elements
--------------------------------------------------------------------*/
 * {
   transition:
     background-color 0.25s ease,

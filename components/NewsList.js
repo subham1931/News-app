@@ -11,7 +11,6 @@ export default function NewsList({
 }) {
   const { theme } = useTheme();
 
-  // Loader
   if (loading) {
   return (
     <div className="flex justify-center items-center py-20 min-h-[calc(100vh-20rem)]">

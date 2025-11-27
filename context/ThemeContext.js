@@ -5,7 +5,6 @@ const ThemeContext = createContext();
 export function ThemeProvider({ children }) {
   const [theme, setTheme] = useState("light");
 
-  // Load saved theme on first render
   useEffect(() => {
     const saved = localStorage.getItem("theme");
     const initialTheme = saved === "dark" ? "dark" : "light";
@@ -14,7 +13,6 @@ export function ThemeProvider({ children }) {
     document.documentElement.classList.toggle("dark", initialTheme === "dark");
   }, []);
 
-  // Toggle and save theme
   const toggleTheme = () => {
     const newTheme = theme === "light" ? "dark" : "light";
 
@@ -31,7 +29,6 @@ export function ThemeProvider({ children }) {
   );
 }
 
-// Custom hook for convenience
 export function useTheme() {
   return useContext(ThemeContext);
 }

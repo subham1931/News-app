@@ -18,7 +18,6 @@ export default function Home({ initialArticles, initialTotal }) {
   const PAGE_SIZE = 12;
 
   useEffect(() => {
-
     async function fetchData() {
       setLoading(true);
 
@@ -89,9 +88,6 @@ export default function Home({ initialArticles, initialTotal }) {
   );
 }
 
-// ------------------------------
-// SERVER SIDE PROPS
-// ------------------------------
 export async function getServerSideProps() {
   const res = await fetch(
     `${process.env.NEWS_API_BASE}/v2/top-headlines?country=us&pageSize=12&apiKey=${process.env.NEWS_API_KEY}`

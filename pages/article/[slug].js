@@ -8,14 +8,12 @@
 
     const isDark = theme === "dark";
 
-    // When article is missing (page refresh)
     if (!article) {
       return (
         <div
           className={`min-h-screen p-6 mx-auto max-w-3xl transition-colors
           ${isDark ? "bg-gray-900 text-gray-200" : "bg-gray-50 text-gray-900"}`}
         >
-          {/* Back Button */}
           <button
             onClick={() => router.back()}
             className={`inline-flex items-center gap-2 px-3 py-2 rounded-md border mb-6
@@ -46,7 +44,6 @@
           <title>{article.title}</title>
         </Head>
 
-        {/* Back Button */}
         <button
           onClick={() => router.back()}
           className={`inline-flex items-center gap-2 px-3 py-2 rounded-md border mb-6 
@@ -58,12 +55,9 @@
           ← Back
         </button>
 
-        {/* Title */}
         <h1 className="text-3xl font-extrabold leading-tight mb-4">
           {article.title}
         </h1>
-
-        {/* Meta */}
         <div className={`text-sm mb-4 ${isDark ? "text-gray-400" : "text-gray-600"}`}>
           {article.source?.name && (
             <span className="mr-4">Source: {article.source.name}</span>
@@ -81,7 +75,6 @@
           )}
         </div>
 
-        {/* Image */}
         {article.urlToImage && (
           <img
             src={article.urlToImage}
@@ -90,7 +83,6 @@
           />
         )}
 
-        {/* Description */}
         {article.description && (
           <p
             className={`text-lg mb-4 leading-relaxed 
@@ -100,7 +92,6 @@
           </p>
         )}
 
-        {/* Content */}
         {article.content && (
           <p
             className={`mb-8 leading-relaxed 
@@ -110,7 +101,6 @@
           </p>
         )}
 
-        {/* Read Original Button */}
         <a
           href={article.url}
           target="_blank"

@@ -1,40 +1,131 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/pages/api-reference/create-next-app).
 
-## Getting Started
+# Morden News App
 
-First, run the development server:
+A fast, responsive, theme-enabled News Application built with **Next.js**, featuring:
 
+- Live news fetching using **NewsAPI**
+- Dark/Light mode with persistent theme
+- Search with recent history suggestions (saved in localStorage)
+- Category filtering
+- Pagination
+- Dynamic article pages with SSR
+- Fully responsive UI
+- Jest + React Testing Library unit tests
+- API routes for secure server-side NewsAPI access
+
+
+
+## 🚀 Live Demo
+
+https://news-app-eta-nine-60.vercel.app
+
+
+---
+
+## ⚙️ Installation & Setup
+
+### 1️⃣ Clone the repo  
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git clone https://github.com/YOUR_USERNAME/news-app.git
+cd news-app
+```
+---
+
+### Install dependencies 
+```bash
+npm install
+
+
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Environment Variables
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+To run this project, you will need to add the following environment variables to your .env file
 
-[API routes](https://nextjs.org/docs/pages/building-your-application/routing/api-routes) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+`NEWS_API_BASE=https://newsapi.org`
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/pages/building-your-application/routing/api-routes) instead of React pages.
+`NEWS_API_KEY=YOUR_NEWSAPI_KEY`
 
-This project uses [`next/font`](https://nextjs.org/docs/pages/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
-## Learn More
+## Run Locally
 
-To learn more about Next.js, take a look at the following resources:
+Clone the project
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn-pages-router) - an interactive Next.js tutorial.
+```bash
+  git clone https://link-to-project
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Go to the project directory
 
-## Deploy on Vercel
+```bash
+  cd my-project
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Install dependencies
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/pages/building-your-application/deploying) for more details.
+```bash
+  npm install
+```
+
+Start the server
+
+```bash
+  npm run dev
+```
+
+
+## Running Tests
+
+To run tests, run the following command
+
+```bash
+  npm run test
+```
+
+
+## Theme System
+
+Theme is persisted using localStorage.
+Users can toggle between:
+
+Light mode
+
+Dark mode
+The chosen theme applies across all pages and is stored between sessions.
+
+
+## Tech Stack
+
+Next.js
+
+React
+
+TailwindCSS
+
+NewsAPI
+
+Jest + React Testing Library
+
+Vercel Deployment
+
+
+## Contributing
+
+Pull requests are welcome.
+
+For major features, open an issue first to discuss.
+
+
+## License
+
+
+If you want, I can also:
+
+✅ Add badges (build, license, deploy status)  
+✅ Add screenshots with a styled layout  
+✅ Add a GIF of the app  
+✅ Add API documentation section  
+
+Just say the word.
+
+

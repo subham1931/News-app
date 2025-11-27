@@ -9,18 +9,16 @@ export default function SearchBar({ value = "", onChange = () => {} }) {
   const [showHistory, setShowHistory] = useState(false);
   const ref = useRef(null);
 
-  // Sync internal input value when parent value changes
   useEffect(() => {
     setInputValue(value);
   }, [value]);
 
-  // Load search history on mount
   useEffect(() => {
     const saved = JSON.parse(localStorage.getItem("search_history") || "[]");
     setHistory(saved.slice(0, 5));
   }, []);
 
-  // Close dropdown when clicking outside
+
   useEffect(() => {
     const handler = (e) => {
       if (ref.current && !ref.current.contains(e.target)) {
@@ -31,17 +29,15 @@ export default function SearchBar({ value = "", onChange = () => {} }) {
     return () => document.removeEventListener("mousedown", handler);
   }, []);
 
-  // Save search + trigger parent onChange
+
   const handleSearch = () => {
     if (!inputValue.trim()) return;
 
-    // Update history
     const updated = [inputValue, ...history.filter((h) => h !== inputValue)];
     const topFive = updated.slice(0, 5);
     setHistory(topFive);
     localStorage.setItem("search_history", JSON.stringify(topFive));
 
-    // 🔥 THIS is the real search
     onChange(inputValue);
 
     setShowHistory(false);
@@ -51,7 +47,6 @@ export default function SearchBar({ value = "", onChange = () => {} }) {
     <div className="relative w-full mb-6" ref={ref}>
       <div className="flex items-center gap-3 w-full">
 
-        {/* Input */}
         <div className="relative flex-1">
           <input
             value={inputValue}
@@ -68,7 +63,6 @@ export default function SearchBar({ value = "", onChange = () => {} }) {
           />
         </div>
 
-        {/* Search Button */}
         <button
           onClick={handleSearch}
           className={`px-6 py-2.5 rounded-lg font-semibold transition-all duration-300
@@ -81,7 +75,6 @@ export default function SearchBar({ value = "", onChange = () => {} }) {
         </button>
       </div>
 
-      {/* Dropdown History */}
       {showHistory && history.length > 0 && (
         <div
           className={
@@ -101,7 +94,7 @@ export default function SearchBar({ value = "", onChange = () => {} }) {
               key={i}
               onClick={() => {
                 setInputValue(item);
-                onChange(item); // triggers new search
+                onChange(item); 
                 setShowHistory(false);
               }}
               className={
